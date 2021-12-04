@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>changing text with scrolling</title>
+</head>
+<style>
+    body{
+        width: 100%;
+        height: 100%;
+        background-color: #ddd;
+        font-family: monospace;
+        font-size: 99px;
+        text-align: center;
+
+    }
+    div{
+        position: absolute;
+    }
+</style>
+
+<body>
+    <div class="scroll disk"></div>
+    <div class="main">
+        <svg viewBox="0 0 1200 800" xmls="http://www.w3.org/2000/svg">
+           <mask id="m">
+               <g class="cloud1">
+                   <rect fill="#fff" width="100%" height="801" y="799"/>
+                   <image xlink:href="https://www.google.com/url
+                   ?sa=i&url=https%3A%2F%2Funsplash.com%2Fi
+                   mages%2Fnature%2Fcloud&psig=AOvVaw0p6a
+                   ywkoGvAkXatbsRr5YF&ust=1629550525976000&
+                   source=images&cd=vfe&ved=0CAgQjRxqFwoTCOjIivXSv_ICFQAAAAAdAAAAABAD" 
+                   width="1200" height="800"/>
+               </g>
+           </mask>
+           <image class="sky" xlink::href="https://www.google.com/url?sa=i&url
+           =https%3A%2F%2Fwww.pexels.com%2Fsearch%2Feveni
+           ng%2520sky%2F&psig=AOvVaw1Qg0V1hTbnkvoKDNrdXBES&ust=1629
+           550715474000&source=images&cd=vfe&ved=0CAgQjRxqFwoTCLinldjTv_ICF
+           QAAAAAdAAAAABAD" width="1200" height="590"/>
+           <image class="mountbg" 
+           xlink::href="https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fwallpaper
+           s%2Fnature%2Fmountain&psig=AOvVaw2UoDlt29MXy4J_O
+           AJjgJHW&ust=1629551068969000&source=images&cd=vfe&
+           ved=0CAgQjRxqFwoTCIjIzfjUv_ICFQAAAAAdAAAAABAD"
+           width="1200" height="800"/>
+           <image class="mountainfg" xlink::href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.wallpapertip.com%2Fwpic%2FiRJbTJw
+           _wallpaper-mountains-peak-alps-snowy-mountain-range%2F&psi
+           g=AOvVaw2UoDlt29MXy4J_OAJjgJHW&ust=1629551068969000&source=imag
+           es&cd=vfe&ved=0CAgQjRxqFwoTCIjIzfjUv_ICFQAAAAAdAAAAABAI"
+           width="1200" height="800"/>
+
+
+           <text fill="#fff" x="350" y="200">HI</text>
+           <polyline class="arrow" fill="#fff" points="599,250,599,289,590,270,279 590 ,282 610,279 601,289 601,250"/>
+           <g mask="url(#m)">
+               <rect fill="#fff" width="100%" height="100%"/>
+               <text x="350" y="200" fill="#162a43">prakushmika</text> 
+           </g>
+           <rect id="arrowbin" width ="100%" height="100%" opacity="0"
+           x="550" y="220" style="cursor:pointer"/>
+
+        </svg> </div>
+    
+</body>
+<script>
+    gsap.set(".main",{
+        position:"fixed",
+        bg="#fff",
+        width="100%",
+        maxwidth="1200px",
+        height="100%",
+        top:0,
+        left:"50%",
+        x:"-50%"
+    });
+    gsap.set(".scroll disk",{
+        width:"100%" ,height:"200%"
+    });
+    gsap.timeline({
+        scrollTrigger:{
+            trigger:".scroll disk",
+            start:"top top",
+            end:"bottom bottom",
+            scrub:1
+        }
+    })
+    .fromTo("sky",{y:0},{y:-200},0)
+    .fromTo("cloud1",{y:100},{y:-500},0)
+    .fromTo("mountainbg",{y:-50},{y:-700},0)
+    .fromTo("mountainfg",{y:-30},{y:-600},0)
+
+    
+    
+</script>
+</html>

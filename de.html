@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>de1</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    body{
+        height: 100vh;
+        background: linear-gradient(90deg, rgb(230, 63, 63),rgb(83, 83, 240));
+    }
+    .wrapper{
+        width: 40%;
+        min-width: 590px;
+        position: absolute;
+        transform: translate(-50%,-50%);
+        left: 50%;
+        top: 50%;
+    }
+    .container{
+        width: 100%;
+        padding: 30px 30px 50px;
+        background-color: white;
+        border-radius:10px ;
+        box-shadow: 0 20px 30px rgba(0,0,0,0.2);
+    }
+    container *{
+        font-family: "Poppins",sans-serif;
+        color: black;
+        font-weight: 500;
+    }
+    h2{
+        margin-bottom: 50px;
+        letter-spacing: 2px;
+        text-align: center;
+        font-size: 33px;
+        font-weight: bold;
+    }
+    .details{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+    .bar{
+        position: relative;
+        border: 2px solid #0d96e0;
+        border-radius: 20px;
+    }
+    .bar div{
+        position: relative;
+        width: 0;
+        height: 9px;
+        border-radius: 10px;
+        background-color: #0d96e0;
+    }
+    .skills:not(:last-child){
+        margin-bottom:30px;
+    }
+    .html-bar{
+        animation: html-fill 10s forwards;
+    }
+    @keyframes html-fill{
+        100%{
+            width: 90%;
+        }
+    }
+    .css-bar{
+        animation: css-fill 12s forwards;
+    }
+    @keyframes css-fill{
+        100%{
+            width: 75%;
+        }
+    }
+    .javascript-bar{
+        animation: ja-fill 15s forwards;
+    }
+    @keyframes ja-fill{
+        100%{
+            width: 72%;
+        }
+    }
+    .rect-bar{
+        animation: rect-fill 8s forwards;
+    }
+    @keyframes rect-fill{
+        100%{
+            width: 80%;
+        }
+    }
+    .wrapper1{
+        height: 50%;
+        min-height: 590px;
+        position: absolute;
+        transform: translate(-50%,-50%);
+        left: 15%;
+        top: 50%;
+    }
+    .container1{
+        height: 100%;
+        padding: 30px 30px 50px;
+        background-color: white;
+        border-radius:10px ;
+        box-shadow: 0 20px 30px rgba(0,0,0,0.2);
+    }
+    container1 *{
+        font-family: "Poppins",sans-serif;
+        color: black;
+        font-weight: 500;
+    }
+    h2{
+        margin-bottom: 50px;
+        letter-spacing: 2px;
+        text-align: center;
+        font-size: 33px;
+        font-weight: bold;
+    }
+    .details1{
+        rotate: 45deg;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        
+    }
+    .bar1{
+        position: relative;
+        border: 2px solid #0d96e0;
+        border-radius: 20px;
+    }
+    .bar1 div1{
+        position: relative;
+        width: 0;
+        height: 20px;
+        border-radius: 10px;
+        background-color: #0d96e0;
+    }
+    .skills:not(:last-child){
+        margin-bottom:30px;
+    }
+    .html-bar1{
+        animation: html-fill1 10s forwards;
+    }
+    @keyframes html-fill1{
+        100%{
+            width: 90%;
+        }
+    }
+    .css-bar1{
+        animation: css-fill1 12s forwards;
+    }
+    @keyframes css-fill1{
+        100%{
+            width: 75%;
+        }
+    }
+    .javascript-bar1{
+        animation: ja-fill1 15s forwards;
+    }
+    @keyframes ja-fill1{
+        100%{
+            width: 72%;
+        }
+    }
+    .rect-bar1{
+        animation: rect-fill1 8s forwards;
+    }
+    @keyframes rect-fill1{
+        100%{
+            width: 80%;
+        }
+    }
+    .img{
+        border-radius: 30px;
+        padding: 2px;
+    }
+</style>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <h2>STOCK MARKET</h2>
+            <div class="skills">
+                <div class="details">
+                    <span>GOOGLE</span>
+                    <span>90%</span>
+                </div>
+                <div class="bar">
+                    <div class="html-bar"></div>
+                </div>
+            </div>
+            <div class="skills">
+                <div class="details">
+                    <span>LINKDIN</span>
+                    <span>75%</span>
+                </div>
+                <div class="bar">
+                    <div class="css-bar"></div>
+                </div>
+            </div>
+            <div class="skills">
+                <div class="details">
+                    <span>BYJUS</span>
+                    <span>72%</span>
+                </div>
+                <div class="bar">
+                    <div class="javascript-bar"></div>
+                </div>
+            </div>
+            <div class="skills">
+                <div class="details">
+                    <span>AMAZON</span>
+                    <span>80%%</span>
+                </div>
+                <div class="bar">
+                    <div class="rect-bar">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="wrapper1">
+        <div class="container1">
+            <h2>STOCK MARKET</h2>
+            <img src="https://source.unsplash.com/user/erondu/1600x900" alt="images" width="300px" height="200px" >
+            
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

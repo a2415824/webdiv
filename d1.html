@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bouncing balls</title>
+</head>
+<body>
+    <style>
+        canvas{
+            background-color: rgb(151, 185, 247);
+            animation: colorchange 5s linear infinite ;
+        }
+        @keyframes colorchange {
+            0%{
+                background:linear-gradient(30deg,#eded,rgba(129, 45, 129, 0.933));
+            }
+            20%{
+                background:linear-gradient(40deg,#dd0712,#ff9797);
+            }
+            40%{
+                background:linear-gradient(50deg,#862d57,#efef);
+            }
+            60%{
+                background:linear-gradient(60deg,#37a0e6dd,#862d57);
+            }
+            80%{
+                background:linear-gradient(70deg,#d2f02c,#fefe);
+            }
+            100%{
+                background:linear-gradient(80deg,#94eb94ee,#b6b5ff);
+            }
+            
+        }
+        
+        div{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #a2f3a2;
+
+        }
+        .loading-box{
+            position: relative;
+            width: 500px;
+            height: 50px;
+            border-radius: 50px;
+            border: 2px solid #ededed;
+            overflow: hidden;
+        }
+        
+        .loading{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        border-radius: 30px;
+        background: linear-gradient(90deg,#b17feb,#b6b5ff,#ff9797,#eb6060,#dd0712);
+        left: 0%;
+    }
+        .loading{
+            left: -100%;
+            animation: load 10s linear infinite;
+        }
+        @keyframes load {
+            0%{
+                left:-100%;
+            }
+            50%{
+                left: 100%;
+            }
+            100%{
+                left: -100%;
+            }
+            
+        }
+    </style>
+
+    <canvas id="myCanvas" width="480" height="350">AAA</canvas>
+    <div class="loading-box">AAA
+        <div class="loading">ammu praveen</div>
+    </div>
+
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+        var ballRadius = 10;
+        var x = canvas.width/2;
+        var y = canvas.height-30;
+        
+        var dx = 2;
+        var dy = -2;
+        
+
+        function drawBall1() {
+            ctx.beginPath();
+            ctx.arc(x, y, ballRadius, 0, Math.PI*2);
+            ctx.fillStyle = "#0095DD";
+            ctx.fill();
+            ctx.closePath();
+        }
+        function drawBall2(){
+            ctx.beginPath();
+            ctx.arc(x,y,ballRadius,0,Math.PI*2);
+            ctx.fillStyle= "blue";
+            ctx.fill();
+            ctx.closePath();
+
+        }
+        
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawBall1();
+            
+            
+            
+            if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
+                dx = -dx;
+                x++;
+                drawBall2();
+            }
+            if(y + dy > canvas.height-ballRadius || y + dy < ballRadius) {
+                dy = -dy;
+                y++;
+                drawBall2();
+            }
+            
+            
+            x += dx;
+            drawBall1();
+            y += dy;
+            drawBall2();
+        
+        
+
+        }
+        
+        
+        
+        setInterval(draw, 8);
+    </script>
+    
+    
+</body>
+</html>

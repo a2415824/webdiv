@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new drawing</title>
+</head>
+<style>
+    html,body{
+        height: 100%;
+        width: 100%;
+    }
+    #MySVG{
+        height: 100%;
+        width: 100%;
+        background-color: black;
+    }
+</style>
+<body>
+    <div id="MySVG"></div>
+    
+</body>
+<script>
+    var renderer = i2d.svgLayer('#MySVG',{});
+    var parallelChain = i2d.chain.parallelChain().loop(10)
+    var circleCount = 100
+    var radious = 100
+
+    var g = renderer_.createEl({
+        el:'group',
+        Attr:{
+            transform:{
+                translate:[renderer_.width/2,renderer_.height/2]
+            }
+        }
+    })
+    g.createEls((new
+    Array(circlesCount)).fill().map(function(d,i){
+        return i
+    }),{
+        el:'circle',
+        attr:{
+            r:5,
+            cx:0,
+            cy:0
+        },
+        style:{
+            fill:function(d){
+                return 'hsl('+((d%50)/50)*360+',70%,50%'
+            }
+        }
+    })
+    .exec(animateEachCircle)
+
+    function animateEachCircle(d){
+        parallelChain.add(this.animateExe({
+            duration:2000,
+            delay:(d%50)+30,
+            ease:'easeInOutSin',
+            attr:function(f){
+                this.setAttr({
+                    cx:radious*Math.cos(f*Math.PI*2+Math.PI*Math.floor(d/50))+(-radious+Math.floor(d/50)*radious*2),
+                    cy:radious*Math.sin(f*Math.PI*2+Math.PI*Math.floor(d/50))
+                })
+            }
+        }))
+    }
+    parallelChain.start()
+</script>
+</html>
